@@ -50,10 +50,12 @@ class BlankFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "Fragment onViewCreated()")
         binding = FragmentBlankBinding.bind(view)
+        // Intent explicit
         binding.explicitButton.setOnClickListener {
             val intent = Intent(activity, MainActivity2::class.java)
             startActivity(intent)
         }
+        // Intent implicit
         binding.implicitButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://copernic.cat/")
